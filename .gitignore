@@ -1,0 +1,10 @@
+text
+node_modules/
+.env
+.DS_Store
+
+# git add .
+# git commit -m "MOHZTEC Dashboard: Pro Security Version"
+# git remote add origin https://github.com
+# git branch -M main
+# git push -u origin main
