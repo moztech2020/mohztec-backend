@@ -1,10 +1,10 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const mqtt = require('mqtt');
-const axios = require('axios');
-const dns = require('dns'); // 👈 The Navigator
+import 'dotenv/config'; 
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import mqtt from 'mqtt';
+import axios from 'axios';
+import dns from 'dns';
 
 // --- 1. BYPASS ISP BLOCKS ---
 // Layman: This tells the server "Don't use the local slow maps, use Google's fast maps to find our Vault."
