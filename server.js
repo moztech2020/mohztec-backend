@@ -57,7 +57,7 @@ mqttClient.on('message', async (topic, message) => {
             // STEP B: Send Telegram using Axios (The Cloud Phone)
             const token = "8712705004:AAHqmMGNeMh3V5paK0CJIoOajW8S86u446g";
             const chat_id = "6644491901";
-            const url = `https://telegram.org{token}/sendMessage`;
+            const url = `https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}`;
             
             await axios.get(url, {
                 params: { chat_id: chat_id, text: `🚨 ALERT: ${payload}` }
