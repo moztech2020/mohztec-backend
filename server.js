@@ -155,6 +155,7 @@ io.on('connection', (socket) => {
     });
 });
 
+
 // 4. THE SECRETARY (Handling Alarms)
 mqttClient.on('message', async (topic, message) => {
     const payload = message.toString();
@@ -196,6 +197,13 @@ app.post('/api/trigger', (req, res) => {
     const { state } = req.body;
     mqttClient.publish('commands/alarm', state);
     res.json({ success: true });
+});
+
+app.delete('/api/logs/:id', async (req, res) => {
+  try {
+    await Log.findByIdAndDelete(req.params.id);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: "Failed" }); }
 });
 
 // 6. POWER ON (Use httpServer instead of app)
